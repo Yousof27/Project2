@@ -1,0 +1,1340 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Start Header */
+header .logo,
+header nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+header {
+    width: 100%;
+    height: 20%;
+    padding: 40px;
+
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: 100%;
+    grid-template-areas: ". logo . nav nav nav nav nav nav nav nav icon icon .";
+}
+
+/* ...   logo   ... */
+header .logo {
+    grid-area: logo;
+
+    font-size: 20px;
+    background-color: white;
+    color: orangered;
+    text-shadow: 0px 0px 4px orangered;
+    box-shadow: 0px 0px 5px 0px royalblue inset;
+    padding: 10px;
+    border-radius: 26px;
+
+    position: relative;
+}
+
+header .logo span {
+    color: royalblue;
+    text-shadow: 0px 0px 4px royalblue;
+}
+
+header .logo::after {
+    content: "";
+    height: 100%;
+    width: 50px;
+    background-color: transparent;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    border: 5px solid orangered;
+    box-shadow: 0px 0px 5px 0px orangered, 0px 0px 5px 0px orangered inset;
+    border-radius: 50%;
+
+    z-index: -1;
+}
+
+header .logo::before {
+    content: "";
+    height: 100%;
+    width: 50px;
+    background-color: transparent;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    border: 5px solid royalblue;
+    box-shadow: 0px 0px 5px 0px royalblue, 0px 0px 5px 0px royalblue inset;
+    border-radius: 50%;
+
+    z-index: -1;
+}
+/* ...   end logo   ... */
+
+/* ...   nav   ... */
+header nav {
+    grid-area: nav;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    position: relative;
+}
+
+header nav ul li::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border: 2px solid royalblue;
+    border-right: none;
+    border-left: none;
+    top: -2px;
+    left: -2px;
+    z-index: -1;
+    transition: 0.2s;
+}
+
+header nav ul li:hover::after {
+    width: calc(100% + 2px);
+    transition-delay: 0.2s;
+}
+
+header nav ul li::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    border: 2px solid royalblue;
+    border-top: none;
+    border-bottom: none;
+    top: 50%;
+    left: -2px;
+    z-index: -1;
+    transition: 0.2s;
+}
+
+header nav ul li:hover::before {
+    height: calc(100% + 3.5px);
+    top: -2px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: royalblue;
+}
+
+header nav ul li a:active {
+    color: orangered;
+}
+
+/*  */
+
+header nav ul li span {
+    position: absolute;
+    width: 140%;
+    height: 70%;
+    bottom: -50%;
+    left: -2px;
+    background-color: transparent;
+    display: none;
+    z-index: 4;
+}
+
+header nav ul li:hover span {
+    display: block;
+}
+
+header nav ul li .table {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: -2px;
+    width: 493px;
+    height: 207px;
+    z-index: 10000;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1.5fr repeat(4, 1fr);
+    gap: 1px;
+    background-color: gray;
+    border: 1px solid gray;
+    border-bottom: 3px solid royalblue;
+
+    transition: 0.3s;
+    transform: scale(0.7);
+    visibility: hidden;
+    opacity: 0;
+}
+
+header nav ul li:hover .table {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+header nav ul li .table h2,
+header nav ul li .table p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+header nav ul li .table h2 {
+    background-color: #1b1b1b;
+    color: white;
+    font-size: 20px;
+}
+
+header nav ul li .table p {
+    background-color: white;
+    font-size: 16px;
+    transition: 0.15s;
+}
+
+header nav ul li .table p:hover {
+    background-color: #eee;
+}
+
+header nav ul li .table p a {
+    color: black;
+}
+/* ...   end nav   ... */
+
+/* ...   icon   ... */
+header .icons a {
+    text-decoration: none;
+    display: inline-block;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .icons a i {
+    font-size: 25px;
+    color: orangered;
+    text-shadow: 0px 0px 2px orangered;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+header .icons {
+    width: 160px;
+    grid-area: icon;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: center;
+    position: relative;
+}
+
+header .icons div {
+    width: fit-content;
+    height: fit-content;
+}
+
+header .icons div a .bag-icon {
+    position: relative;
+}
+
+header .icons div a .bag-icon::after {
+    content: "0";
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: transparent;
+    text-shadow: 0px 0px 5px black;
+    color: white;
+    z-index: 9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    bottom: -20%;
+    right: -15%;
+    transition: 0.3s;
+}
+
+header .icons div .det-con {
+    position: absolute;
+    color: gray;
+    bottom: 50%;
+    transform: translateY(50%);
+    right: -50%;
+
+    width: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: capitalize;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+header .icons div:hover .det-con {
+    opacity: 1;
+}
+
+header .icons div:hover a i {
+    transform: scale(0.8);
+}
+
+header .icons div:hover a .bag-icon::after {
+    transform: scale(1.2);
+}
+/* ...   end icon   ... */
+/* End Header */
+
+
+/* Start Main */
+main {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-areas: ".  cont cont cont cont cont cont cont cont cont cont cont .";
+}
+
+main::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: -100px;
+    background-color: transparent;
+    z-index: 50;
+}
+
+main .container {
+    grid-area: cont;
+    background-image: url(../img/background3.jpg);
+    background-size: contain;
+    background-position: right bottom;
+    padding: 100px 50px;
+    color: orangered;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+main .container h1 {
+    text-shadow: 0px 0px 6px orangered;
+    line-height: 90px;
+    /* display: inline-block */
+}
+
+main .container button {
+    padding: 10px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    box-shadow: 0px 0px 10px 1px royalblue inset, 0px 0px 10px 1px royalblue;
+    transition: 0.3s;
+    display: block;
+}
+
+main .container button a {
+    color: royalblue;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+main .container button:hover {
+    background-color: royalblue;
+    cursor: pointer;
+}
+
+main .container button:hover a {
+    color: black;
+}
+/* End Main */
+
+
+/* Start Special */
+.special {
+    width: 100%;
+    height: 85vh;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-areas: ". cont cont cont cont cont cont cont cont cont cont cont .";
+}
+
+.special::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: -100px;
+    background-color: transparent;
+    z-index: 5;
+}
+
+.special .container {
+    grid-area: cont;
+    
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: 25% 75%;
+    grid-template-areas:
+        ". start start start start start start start start start start start ."
+        ". end end end end end end end end end end end  .";
+}
+
+.special .container .start {
+    grid-area: start;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.special .container .start h2 {
+    position: relative;
+}
+
+.special .container .start h2::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -15px;
+    left: 50%;
+    background-color: royalblue;
+    transition: 0.3s;
+}
+
+.special:hover .start h2::after {
+    width: 100%;
+    left: 0%;
+}
+
+.special .container .end {
+    grid-area: end;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 50px;
+    padding: 20px;
+}
+
+.special .container .end .item {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1fr;
+}
+
+.special .container .end .item-left {
+    grid-template-columns: 60% 40%;
+}
+
+.special .container .end .item .text:hover + .image .img1-4, .special .container .end .item .image:hover .img1-4 {
+    top: -10px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.special .container .end .item .text:hover + .image .img1-3, .special .container .end .item .image:hover .img1-3 {
+    top: -5px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.special .container .end .item .text:hover + .image .img1-2, .special .container .end .item .image:hover .img1-2 {
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+}
+
+.special .container .end .item .text:hover + .image .img1-1, .special .container .end .item .image:hover .img1-1 {
+    top: 5px;
+    left: -10px;
+    cursor: pointer;
+}
+
+.special .container .end .item .text:hover + .image-left .img1-4, .special .container .end .item .image-left:hover .img1-4 {
+    top: 10px;
+    left: -20px;
+}
+
+.special .container .end .item .text:hover + .image-left .img1-3, .special .container .end .item .image-left:hover .img1-3 {
+    top: 5px;
+    left: -10px;
+}
+
+.special .container .end .item .text:hover + .image-left .img1-2, .special .container .end .item .image-left:hover .img1-2 {
+    top: 0px;
+    left: 0px;
+}
+
+.special .container .end .item .text:hover + .image-left .img1-1, .special .container .end .item .image-left:hover .img1-1 {
+    top: -5px;
+    left: 10px;
+}
+
+.special .container .end .item .text:hover + .image-top-left .img1-4, .special .container .end .item .image-top-left:hover .img1-4 {
+    top: -10px;
+    left: -20px;
+}
+
+.special .container .end .item .text:hover + .image-top-left .img1-3, .special .container .end .item .image-top-left:hover .img1-3 {
+    top: -5px;
+    left: -10px;
+}
+
+.special .container .end .item .text:hover + .image-top-left .img1-2, .special .container .end .item .image-top-left:hover .img1-2 {
+    top: 0px;
+    left: 0px;
+}
+
+.special .container .end .item .text:hover + .image-top-left .img1-1, .special .container .end .item .image-top-left:hover .img1-1 {
+    top: 5px;
+    left: 10px;
+}
+
+.special .container .end .item .text:hover + .image-bottom-right .img1-4, .special .container .end .item .image-bottom-right:hover .img1-4 {
+    top: 10px;
+    left: 20px;
+}
+
+.special .container .end .item .text:hover + .image-bottom-right .img1-3, .special .container .end .item .image-bottom-right:hover .img1-3 {
+    top: 5px;
+    left: 10px;
+}
+
+.special .container .end .item .text:hover + .image-bottom-right .img1-2, .special .container .end .item .image-bottom-right:hover .img1-2 {
+    top: 0px;
+    left: 0px;
+}
+
+.special .container .end .item .text:hover + .image-bottom-right .img1-1, .special .container .end .item .image-bottom-right:hover .img1-1 {
+    top: -5px;
+    left: -10px;
+}
+
+.special .container .end .item .text:hover {
+    cursor: pointer;
+    color: royalblue;
+}
+
+.special .container .end .item .text {
+    background-color: #eee;
+    padding: 20px;
+    height: 80%;
+    text-transform: capitalize;
+    margin-top: 51%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    align-content: space-evenly;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    order: 1;
+}
+
+.special .container .end .item .text-left {
+    order: 2;
+    padding: 10px 0px 10px 20px;
+}
+
+.special .container .end .item .text p {
+    color: #333;
+}
+
+.special .container .end .item .image {
+    position: relative;
+    order: 2;
+    z-index: 50;
+}
+
+.special .container .end .item .image .img1{
+    box-shadow: 0px 0px 1px 1px white inset;
+}
+
+.special .container .end .item .image-left {
+    order: 1;
+    transition: 0.3s;
+}
+
+.special .container .end .item .image-left:hover {
+    transform: translateX(-10px);
+}
+
+.special .container .end .item .image:hover ~ .text {
+    color: royalblue;
+}
+
+.special .container .end .item .image .img1{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+}
+/* End Special */
+
+
+/* Start Discount */
+.discount {
+    width: 100%;
+    height: 45vh;
+    margin-top: 70px;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-areas: ". cont cont cont cont cont cont cont cont cont cont cont .";
+}
+
+.discount::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height:80%;
+    background-color: #eee;
+    z-index: -5;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.discount .container {
+    grid-area: cont;
+
+    display: grid;
+    grid-template-columns: 2fr repeat(2, 1fr);
+    grid-template-areas: "text offer1 offer2";
+    gap: 20px;
+    padding: 20px;
+}
+
+.discount .container .text {
+    grid-area: text;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px 0px black, 0px 0px 5px 0px black inset;
+    border-radius: 0px 50px;
+    display: grid;
+    grid-template-rows: 25% 75%;
+}
+
+.discount .container .text .start {
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.discount .container .text .start h2 {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.discount .container .text .start h2::after {
+    content: "(Some Benefits)";
+    font-size: 16px;
+    position: absolute;
+    width: 100%;
+    bottom: -20px;
+    left: 0;
+}
+
+.discount .container .text .end {
+    padding: 20px;
+    font-size: 17px;
+    line-height: 33px;
+    word-spacing: 1.7px;
+}
+
+.discount .container .text .start i {
+    font-size: 40px;
+    margin-right: 20px;
+    color: royalblue;
+}
+
+.discount .container .offer1 {
+    grid-area: offer1;
+    background-color: red;
+    background-image: url(../img/offer2.jpg);
+    background-size: contain;
+}
+
+.discount .container .offer1::after {
+    content: "Lenovo IdeaPad 15.6 Inch";
+}
+
+.discount .container .offer2 {
+    grid-area: offer2;
+    background-color: blue;
+    background-image: url(../img/offer1.jpg);
+    background-size: contain;
+}
+
+.discount .container .offer2::after {
+    content: "Chicbuy Laptop 15.6 Inch";
+}
+
+.discount .container .offer1::after, .discount .container .offer2::after {
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background-color: #333333cc;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.discount .container .offer span{
+
+    padding: 10px 0px 10px 0px;
+    background-color: red;
+    color: white;
+    position: absolute;
+    right: -1.5px;
+    top: 31.5px;
+    transform: rotate(45deg);
+    font-weight: bold;
+}
+
+.discount .container .offer span::after, .discount .container .offer span::before {
+    content: "";
+    border-width: 27.5px;
+    border-style: solid;
+    border-color: transparent red transparent transparent;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 11px;
+    right: -27px;
+}
+
+.discount .container .offer span::before {
+    border-color: red transparent transparent transparent;
+    top: 11px;
+    right: 78px;
+}
+
+.discount .container .offer:hover::after {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+.discount .container .offer {
+    transition: 0.5s;
+    box-shadow: 0px 0px 10px 2px gray;
+    position: relative;
+}
+
+.discount .container .offer:hover {
+    transform: scale(1.09);
+    cursor: pointer;
+}
+
+.discount .container ul {
+    list-style: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.discount .container ul li {
+    display: inline-block;
+    width: 50px;
+    height: 1px;
+    background-color: royalblue;
+    margin-left: 10px;
+}
+/* End Discount */
+
+
+/* Start Fitures */
+.fitures {
+    width: 100%;
+    height: 25vh;
+    margin-top: 70px;
+    
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-areas: ". cont cont cont cont cont cont cont cont cont cont cont .";
+}
+
+.fitures .container {
+    grid-area: cont;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 70% 30%;
+    column-gap: 2px;
+    border-bottom: 2px solid gray;
+}
+
+.fitures .container .fit {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.fitures .container .fit .start {
+    overflow: hidden;
+    font-size: 40px;
+    background-color: white;
+}
+
+.fitures .container .fit .start, .fitures .container .fit .end {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.fitures .container .fit .start .first-icon {
+    transform: translateY(50%);
+    transition: 0.5s;
+    color: royalblue;
+    text-shadow: 0px 0px 2px royalblue;
+}
+
+.fitures .container .fit .start .second-icon {
+    transform: translateY(150%);
+    transition: 0.3s;
+    color: orangered;
+    text-shadow: 0px 0px 2px orangered;
+}
+
+.fitures .container .fit:hover .start .first-icon {
+    transform: translateY(-150%);
+}
+
+.fitures .container .fit:hover .start .second-icon {
+    transition-delay: 0.1s;
+    transform: translateY(-50%);
+}
+
+.fitures .container .fit .end h2 {
+    font-size: 20px;
+}
+
+.fitures .container .fit .end p {
+    font-size: 15px;
+    color: #333;
+    line-height: 25px;
+}
+/* End Fitures */
+
+
+/* Start Footer */
+footer {
+    width: 100%;
+    border-top: 2px solid black;
+    background-color: rgb(216, 216, 216);
+    box-shadow: 0px 0px 5px 0px black;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+footer p {
+    padding: 15px;
+    font-size: 13px;
+    color: #333;
+    text-transform: uppercase;
+}
+/* End Footer */
+
+
+/* Start Laptops */
+.laptops {
+    width: 100%;
+    height: 130vh;
+}
+
+.laptops .container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: 20% 80%;
+    grid-template-areas:
+        ". start start start start start start start start start start start ."
+        ". end end end end end end end end end end end  .";
+}
+
+.laptops .container .start {
+    grid-area: start;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.laptops .container .start h2 {
+    margin-bottom: 40px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.laptops .container .start h2::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -15px;
+    left: 50%;
+    background-color: royalblue;
+    transition: 0.3s;
+}
+
+.laptops .container:hover  .start h2::after {
+    width: 100%;
+    left: 0%;
+}
+
+.laptops .container:hover .start ul li {
+    opacity: 1;
+}
+
+.laptops .container .start ul {
+    list-style: none;
+    font-size: 20px;
+    width: fit-content;
+    margin-left: 50px;
+}
+
+.laptops .container .start ul li {
+    display: inline-block;
+    width: fit-content;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.laptops .container .start ul li a {
+    margin-right: 50px;
+    text-transform: capitalize;
+    color: #444;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.laptops .container .start ul li a:hover {
+    color: #000;
+}
+
+.laptops .container .end {
+    grid-area: end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 50px;
+    padding: 20px;
+}
+
+.laptops .container .end .item-con {
+    position: relative;
+    perspective: 700px;
+}
+
+.laptops .container .end .item-con:hover .item {
+    transition-delay: 0.3s;
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.laptops .container .end .item-con:hover .icon {
+    transition-delay: 0.6s;
+    opacity: 0.7;
+    visibility: visible;
+    cursor: pointer;
+}
+
+.laptops .container .end .item-con .icon {
+    position: absolute;
+    width: 60px;
+    height: calc(60px / 1.7);
+    background-color: white;
+    background-image: url(../img/apple/apple1.jpg);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 100;
+    top: 20px;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    border: 1px solid gray;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.laptops .container .end .item-con .icon::before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 1px);
+    height: calc(100% + 11px);
+    background-color: transparent;
+}
+
+.laptops .container .end .item-con .icon2 {
+    transform: translateY(110%);
+}
+
+.laptops .container .end .item-con .icon3 {
+    transform: translateY(220%);
+}
+
+.laptops .container .end .item-con .icon4 {
+    transform: translateY(330%);
+}
+
+.laptops .container .end .item-con .icon1-1:hover~div .back {
+    background-image: url(../img/apple/apple1.jpg);
+}
+
+.laptops .container .end .item-con .icon1-2 {
+    background-image: url(../img/apple/apple2.jpg);
+    background-size: 70%;
+}
+
+.laptops .container .end .item-con .icon1-2:hover~div .back {
+    background-image: url(../img/apple/apple2.jpg);
+    background-size: 80%;
+}
+
+.laptops .container .end .item-con .icon1-3 {
+    background-image: url(../img/apple/apple3.jpg);
+    background-size: 80%;
+}
+
+.laptops .container .end .item-con .icon1-3:hover~div .back {
+    background-image: url(../img/apple/apple3.jpg);
+}
+
+.laptops .container .end .item-con .icon1-4 {
+    background-image: url(../img/apple/apple4.jpg);
+}
+
+.laptops .container .end .item-con .icon1-4:hover~div .back {
+    background-image: url(../img/apple/apple4.jpg);
+}
+
+.laptops .container .end .item-con .icon2-1 {
+    background-image: url(../img/dell/dell1.jpg);
+    background-size: 80%;
+}
+
+.laptops .container .end .item-con .icon2-1:hover~div .back {
+    background-image: url(../img/dell/dell1.jpg);
+}
+
+.laptops .container .end .item-con .icon2-2 {
+    background-image: url(../img/dell/dell2.jpg);
+    background-size: 50%;
+}
+
+.laptops .container .end .item-con .icon2-2:hover~div .back {
+    background-image: url(../img/dell/dell2.jpg);
+    background-size: 60%;
+}
+
+.laptops .container .end .item-con .icon2-3 {
+    background-image: url(../img/dell/dell3.jpg);
+    background-size: 80%;
+}
+
+.laptops .container .end .item-con .icon2-3:hover~div .back {
+    background-image: url(../img/dell/dell3.jpg);
+}
+
+.laptops .container .end .item-con .icon2-4 {
+    background-image: url(../img/dell/dell4.jpg);
+    background-size: 70%;
+}
+
+.laptops .container .end .item-con .icon2-4:hover~div .back {
+    background-image: url(../img/dell/dell4.jpg);
+}
+
+.laptops .container .end .item-con .icon3-1 {
+    background-image: url(../img/hp/hp1.jpg);
+    background-size: 65%;
+}
+
+.laptops .container .end .item-con .icon3-1:hover~div .back {
+    background-image: url(../img/hp/hp1.jpg);
+}
+
+.laptops .container .end .item-con .icon3-2 {
+    background-image: url(../img/hp/hp2.jpg);
+    background-size: 60%;
+}
+
+.laptops .container .end .item-con .icon3-2:hover~div .back {
+    background-image: url(../img/hp/hp2.jpg);
+}
+
+.laptops .container .end .item-con .icon3-3 {
+    background-image: url(../img/hp/hp3.jpg);
+    background-size: 65%;
+}
+
+.laptops .container .end .item-con .icon3-3:hover~div .back {
+    background-image: url(../img/hp/hp3.jpg);
+}
+
+.laptops .container .end .item-con .icon3-4 {
+    background-image: url(../img/hp/hp4.jpg);
+    background-size: 60%;
+}
+
+.laptops .container .end .item-con .icon3-4:hover~div .back {
+    background-image: url(../img/hp/hp4.jpg);
+}
+
+.laptops .container .end .item-con .icon4-1 {
+    background-image: url(../img/lenovo/lenovo1.jpg);
+    background-size: 65%;
+}
+
+.laptops .container .end .item-con .icon4-1:hover~div .back {
+    background-image: url(../img/lenovo/lenovo1.jpg);
+}
+
+.laptops .container .end .item-con .icon4-2 {
+    background-image: url(../img/lenovo/lenovo2.jpg);
+    background-size: 60%;
+}
+
+.laptops .container .end .item-con .icon4-2:hover~div .back {
+    background-image: url(../img/lenovo/lenovo2.jpg);
+}
+
+.laptops .container .end .item-con .icon4-3 {
+    background-image: url(../img/lenovo/lenovo3.jpg);
+    background-size: 70%;
+}
+
+.laptops .container .end .item-con .icon4-3:hover~div .back {
+    background-image: url(../img/lenovo/lenovo3.jpg);
+}
+
+.laptops .container .end .item-con .icon4-4 {
+    background-image: url(../img/lenovo/lenovo4.jpg);
+    background-size: 75%;
+}
+
+.laptops .container .end .item-con .icon4-4:hover~div .back {
+    background-image: url(../img/lenovo/lenovo4.jpg);
+}
+
+.laptops .container .end .item-con .icon5-1 {
+    background-image: url(../img/asus/asus1.jpg);
+    background-size: 70%;
+}
+
+.laptops .container .end .item-con .icon5-1:hover~div .back {
+    background-image: url(../img/asus/asus1.jpg);
+}
+
+.laptops .container .end .item-con .icon5-2 {
+    background-image: url(../img/asus/asus2.jpg);
+    background-size: 70%;
+}
+
+.laptops .container .end .item-con .icon5-2:hover~div .back {
+    background-image: url(../img/asus/asus2.jpg);
+}
+
+.laptops .container .end .item-con .icon5-3 {
+    background-image: url(../img/asus/asus3.jpg);
+    background-size: 70%;
+}
+
+.laptops .container .end .item-con .icon5-3:hover~div .back {
+    background-image: url(../img/asus/asus3.jpg);
+}
+
+.laptops .container .end .item-con .icon5-4 {
+    background-image: url(../img/asus/asus4.jpg);
+    background-size: 80%;
+}
+
+.laptops .container .end .item-con .icon5-4:hover~div .back {
+    background-image: url(../img/asus/asus4.jpg);
+}
+
+.laptops .container .end .item-con .icon6-1 {
+    background-image: url(../img/msi/msi1.jpg);
+    background-size: 80%;
+}
+
+.laptops .container .end .item-con .icon6-1:hover~div .back {
+    background-image: url(../img/msi/msi1.jpg);
+}
+
+.laptops .container .end .item-con .icon6-2 {
+    background-image: url(../img/msi/msi2.jpg);
+    background-size: 70%;
+
+}
+
+.laptops .container .end .item-con .icon6-2:hover~div .back {
+    background-image: url(../img/msi/msi2.jpg);
+}
+
+.laptops .container .end .item-con .icon6-3 {
+    background-image: url(../img/msi/msi3.jpg);
+    background-size: 80%;
+}
+
+.laptops .container .end .item-con .icon6-3:hover~div .back {
+    background-image: url(../img/msi/msi3.jpg);
+}
+
+.laptops .container .end .item-con .icon6-4 {
+    background-image: url(../img/msi/msi4.jpg);
+    background-size: 35%;
+}
+
+.laptops .container .end .item-con .icon6-4:hover~div .back {
+    background-image: url(../img/msi/msi4.jpg);
+    background-size: 45%;
+
+}
+
+.laptops .container .end .item-con .item {
+    width: 100%;
+    height: 80%;
+    transform-style: preserve-3d;
+    transform-origin: right center;
+    position: relative;
+    transition: 0.5s;
+}
+
+.laptops .container .end .item-con .item .front, .back {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    background-image: url(../img/apple/apple1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    transition: 0.1s;
+}
+
+.laptops .container .end .item-con .item .front {
+    backface-visibility: hidden;
+}
+
+.laptops .container .end .item-con .item .back {
+    transform: rotateY(-180deg);
+}
+
+.laptops .container .end .item-con .item2 .front,
+.item-con .item2 .back {
+    background-image: url(../img/dell/dell1.jpg);
+    background-size: 95%;
+}
+
+.laptops .container .end .item-con .item3 .front,
+.item-con .item3 .back {
+    background-image: url(../img/hp/hp1.jpg);
+    background-size: 80%;
+}
+
+.laptops .container .end .item-con .item4 .front,
+.item-con .item4 .back {
+    background-image: url(../img/lenovo/lenovo1.jpg);
+    background-size: 80%;
+}
+
+.laptops .container .end .item-con .item5 .front,
+.item-con .item5 .back {
+    background-image: url(../img/asus/asus1.jpg);
+    background-size: 80%;
+}
+
+.laptops .container .end .item-con .item6 .front,
+.item-con .item6 .back {
+    background-image: url(../img/msi/msi1.jpg);
+    background-size: 95%;
+}
+
+.laptops .container .end .item-con i,
+.end .item-con p {
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+
+.laptops .container .end .item-con .first-icon,
+.end .item-con p {
+    margin-left: 40px;
+}
+
+.laptops .container .end .item-con i {
+    color: yellow;
+}
+
+.laptops .container .end .item-con .last-icon {
+    color: black;
+}
+
+.laptops .container .end .item-con>p:last-child {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.laptops .container .end .item-con .name {
+    cursor: pointer;
+}
+/* End Laptops */
+
